@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تعليمات تشغيل النظام مع XAMPP</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Cairo', sans-serif; }
+        .step-card { transition: transform 0.3s ease; }
+        .step-card:hover { transform: translateY(-5px); }
+        .step-number { 
+            width: 40px; 
+            height: 40px; 
+            border-radius: 50%; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body class="bg-light">
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <!-- Header -->
+                <div class="text-center mb-5">
+                    <h1 class="display-4 text-primary">
+                        <i class="fas fa-rocket me-3"></i>
+                        تشغيل نظام أرشفة الأساتذة
+                    </h1>
+                    <p class="lead text-muted">خطوات بسيطة لتشغيل النظام مع XAMPP 8.2.12</p>
+                </div>
+
+                <!-- خطوات التشغيل -->
+                <div class="row g-4 mb-5">
+                    <!-- الخطوة 1 -->
+                    <div class="col-md-6">
+                        <div class="card step-card h-100 border-primary">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center mb-3">
+                                    <div class="step-number bg-primary text-white me-3">1</div>
+                                    <h5 class="card-title mb-0">نسخ الملفات</h5>
+                                </div>
+                                <p class="card-text">انسخ مجلد المشروع إلى مجلد XAMPP:</p>
+                                <div class="bg-light p-3 rounded">
+                                    <code>من: d:\ARCH</code><br>
+                                    <code>إلى: C:\xampp\htdocs\school-system\</code>
+                                </div>
+                                <div class="mt-3">
+                                    <button class="btn btn-primary btn-sm" onclick="copyPath('C:\\xampp\\htdocs\\school-system\\')">
+                                        <i class="fas fa-copy me-1"></i>
+                                        نسخ المسار
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- الخطوة 2 -->
+                    <div class="col-md-6">
+                        <div class="card step-card h-100 border-success">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center mb-3">
+                                    <div class="step-number bg-success text-white me-3">2</div>
+                                    <h5 class="card-title mb-0">تشغيل XAMPP</h5>
+                                </div>
+                                <p class="card-text">افتح XAMPP Control Panel وشغل Apache:</p>
+                                <ul class="list-unstyled">
+                                    <li><i class="fas fa-check text-success me-2"></i>افتح XAMPP Control Panel</li>
+                                    <li><i class="fas fa-check text-success me-2"></i>اضغط "Start" بجانب Apache</li>
+                                    <li><i class="fas fa-check text-success me-2"></i>تأكد من ظهور "Running"</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- الخطوة 3 -->
+                    <div class="col-md-6">
+                        <div class="card step-card h-100 border-warning">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center mb-3">
+                                    <div class="step-number bg-warning text-dark me-3">3</div>
+                                    <h5 class="card-title mb-0">إعداد قاعدة البيانات</h5>
+                                </div>
+                                <p class="card-text">افتح الرابط التالي لإنشاء قاعدة البيانات:</p>
+                                <div class="d-grid gap-2">
+                                    <a href="http://localhost/school-system/test_php.php"
+                                       class="btn btn-info" target="_blank">
+                                        <i class="fas fa-vial me-2"></i>
+                                        اختبار PHP أولاً
+                                    </a>
+                                    <a href="http://localhost/school-system/setup_fixed.php"
+                                       class="btn btn-warning" target="_blank">
+                                        <i class="fas fa-database me-2"></i>
+                                        إعداد قاعدة البيانات
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- الخطوة 4 -->
+                    <div class="col-md-6">
+                        <div class="card step-card h-100 border-info">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center mb-3">
+                                    <div class="step-number bg-info text-white me-3">4</div>
+                                    <h5 class="card-title mb-0">تسجيل الدخول</h5>
+                                </div>
+                                <p class="card-text">ادخل إلى النظام باستخدام البيانات التالية:</p>
+                                <div class="d-grid">
+                                    <a href="http://localhost/school-system/login.php" 
+                                       class="btn btn-info" target="_blank">
+                                        <i class="fas fa-sign-in-alt me-2"></i>
+                                        تسجيل الدخول
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- بيانات تسجيل الدخول -->
+                <div class="row g-4 mb-5">
+                    <div class="col-md-6">
+                        <div class="card border-primary">
+                            <div class="card-header bg-primary text-white">
+                                <h5 class="mb-0">
+                                    <i class="fas fa-user-shield me-2"></i>
+                                    بيانات المدير
+                                </h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <strong>اسم المستخدم:</strong>
+                                        <div class="input-group mt-1">
+                                            <input type="text" class="form-control" value="admin" readonly id="adminUser">
+                                            <button class="btn btn-outline-secondary" onclick="copyText('adminUser')">
+                                                <i class="fas fa-copy"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <strong>كلمة المرور:</strong>
+                                        <div class="input-group mt-1">
+                                            <input type="text" class="form-control" value="admin123" readonly id="adminPass">
+                                            <button class="btn btn-outline-secondary" onclick="copyText('adminPass')">
+                                                <i class="fas fa-copy"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card border-success">
+                            <div class="card-header bg-success text-white">
+                                <h5 class="mb-0">
+                                    <i class="fas fa-chalkboard-teacher me-2"></i>
+                                    بيانات المعلم
+                                </h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <strong>اسم المستخدم:</strong>
+                                        <div class="input-group mt-1">
+                                            <input type="text" class="form-control" value="teacher1" readonly id="teacherUser">
+                                            <button class="btn btn-outline-secondary" onclick="copyText('teacherUser')">
+                                                <i class="fas fa-copy"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <strong>كلمة المرور:</strong>
+                                        <div class="input-group mt-1">
+                                            <input type="text" class="form-control" value="teacher123" readonly id="teacherPass">
+                                            <button class="btn btn-outline-secondary" onclick="copyText('teacherPass')">
+                                                <i class="fas fa-copy"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- روابط سريعة -->
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0">
+                            <i class="fas fa-link me-2"></i>
+                            روابط سريعة
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row g-3">
+                            <div class="col-md-3">
+                                <a href="http://localhost/school-system/" class="btn btn-outline-primary w-100" target="_blank">
+                                    <i class="fas fa-home d-block mb-1"></i>
+                                    الصفحة الرئيسية
+                                </a>
+                            </div>
+                            <div class="col-md-3">
+                                <a href="http://localhost/school-system/test_php.php" class="btn btn-outline-info w-100" target="_blank">
+                                    <i class="fas fa-vial d-block mb-1"></i>
+                                    اختبار PHP
+                                </a>
+                            </div>
+                            <div class="col-md-3">
+                                <a href="http://localhost/school-system/setup_fixed.php" class="btn btn-outline-warning w-100" target="_blank">
+                                    <i class="fas fa-database d-block mb-1"></i>
+                                    إعداد البيانات
+                                </a>
+                            </div>
+                            <div class="col-md-3">
+                                <a href="http://localhost/school-system/login.php" class="btn btn-outline-success w-100" target="_blank">
+                                    <i class="fas fa-sign-in-alt d-block mb-1"></i>
+                                    تسجيل الدخول
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- تحقق من الحالة -->
+                <div class="card mt-4">
+                    <div class="card-header">
+                        <h5 class="mb-0">
+                            <i class="fas fa-check-circle me-2"></i>
+                            تحقق من حالة النظام
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row g-3">
+                            <div class="col-md-4">
+                                <button class="btn btn-outline-primary w-100" onclick="checkXAMPP()">
+                                    <i class="fas fa-server d-block mb-1"></i>
+                                    تحقق من XAMPP
+                                </button>
+                            </div>
+                            <div class="col-md-4">
+                                <button class="btn btn-outline-success w-100" onclick="checkFiles()">
+                                    <i class="fas fa-folder d-block mb-1"></i>
+                                    تحقق من الملفات
+                                </button>
+                            </div>
+                            <div class="col-md-4">
+                                <button class="btn btn-outline-info w-100" onclick="openXAMPP()">
+                                    <i class="fas fa-external-link-alt d-block mb-1"></i>
+                                    فتح XAMPP Control
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function copyText(elementId) {
+            const element = document.getElementById(elementId);
+            element.select();
+            document.execCommand('copy');
+            
+            // إظهار رسالة نجاح
+            const button = element.nextElementSibling;
+            const originalHTML = button.innerHTML;
+            button.innerHTML = '<i class="fas fa-check"></i>';
+            button.classList.add('btn-success');
+            button.classList.remove('btn-outline-secondary');
+            
+            setTimeout(() => {
+                button.innerHTML = originalHTML;
+                button.classList.remove('btn-success');
+                button.classList.add('btn-outline-secondary');
+            }, 1000);
+        }
+
+        function copyPath(path) {
+            navigator.clipboard.writeText(path).then(() => {
+                alert('تم نسخ المسار: ' + path);
+            });
+        }
+
+        function checkXAMPP() {
+            fetch('http://localhost/')
+                .then(response => {
+                    if (response.ok) {
+                        alert('✅ XAMPP يعمل بشكل صحيح!');
+                    } else {
+                        alert('❌ XAMPP لا يعمل. تأكد من تشغيل Apache.');
+                    }
+                })
+                .catch(() => {
+                    alert('❌ XAMPP لا يعمل. تأكد من تشغيل Apache.');
+                });
+        }
+
+        function checkFiles() {
+            fetch('http://localhost/school-system/')
+                .then(response => {
+                    if (response.ok) {
+                        alert('✅ الملفات موجودة في المكان الصحيح!');
+                    } else {
+                        alert('❌ الملفات غير موجودة. تأكد من نسخها إلى htdocs/school-system/');
+                    }
+                })
+                .catch(() => {
+                    alert('❌ لا يمكن الوصول للملفات. تأكد من نسخها ومن تشغيل XAMPP.');
+                });
+        }
+
+        function openXAMPP() {
+            // محاولة فتح XAMPP Control Panel
+            window.open('file:///C:/xampp/xampp-control.exe', '_blank');
+        }
+    </script>
+</body>
+</html>
